@@ -1,7 +1,5 @@
 // Static by default (hoisted), async
-import { Console } from 'console';
 import { MongoClient, Collection, Db , ObjectId, WithId, OptionalId, BulkWriteResult} from 'mongodb';
-import { inherits } from 'util';
 // or dynamic import
 // async function load(){
 // 	var imp = async () => {
