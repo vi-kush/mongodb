@@ -1,0 +1,157 @@
+{ _id: new ObjectId('68208699eb29e04bf8a50bf1'), name: 'Rahul' } { _id: new ObjectId('68208699eb29e04bf8a50bf3'), name: 'Center2' }
+[
+  {
+    _id: new ObjectId('6820869aeb29e04bf8a50bf5'),
+    name: 'paper1',
+    date: 2025-05-11T11:14:34.051Z,
+    center: { _id: new ObjectId('68208699eb29e04bf8a50bf3'), name: 'Center2' },
+    person: new ObjectId('68208699eb29e04bf8a50bf1')
+  },
+  {
+    _id: new ObjectId('6820869aeb29e04bf8a50bf6'),
+    name: 'paper2',
+    date: 2025-05-11T11:14:34.051Z,
+    center: { _id: new ObjectId('68208699eb29e04bf8a50bf3'), name: 'Center2' },
+    person: new ObjectId('68208699eb29e04bf8a50bf1')
+  },
+  {
+    _id: new ObjectId('6820869aeb29e04bf8a50bf7'),
+    name: 'paper3',
+    date: 2025-05-11T11:14:34.051Z,
+    center: { _id: new ObjectId('68208699eb29e04bf8a50bf3'), name: 'Center2' },
+    person: new ObjectId('68208699eb29e04bf8a50bf1')
+  }
+]
+aggr [
+  {
+    _id: new ObjectId('6820869aeb29e04bf8a50bf5'),
+    name: 'paper1',
+    date: 2025-05-11T11:14:34.051Z,
+    center: { _id: new ObjectId('68208699eb29e04bf8a50bf3'), name: 'Center2' },
+    person: { _id: new ObjectId('68208699eb29e04bf8a50bf1'), name: 'Rahul' }
+  },
+  {
+    _id: new ObjectId('6820869aeb29e04bf8a50bf6'),
+    name: 'paper2',
+    date: 2025-05-11T11:14:34.051Z,
+    center: { _id: new ObjectId('68208699eb29e04bf8a50bf3'), name: 'Center2' },
+    person: { _id: new ObjectId('68208699eb29e04bf8a50bf1'), name: 'Rahul' }
+  },
+  {
+    _id: new ObjectId('6820869aeb29e04bf8a50bf7'),
+    name: 'paper3',
+    date: 2025-05-11T11:14:34.051Z,
+    center: { _id: new ObjectId('68208699eb29e04bf8a50bf3'), name: 'Center2' },
+    person: { _id: new ObjectId('68208699eb29e04bf8a50bf1'), name: 'Rahul' }
+  }
+]
+aggr Scr [
+  {
+    _id: new ObjectId('6820869aeb29e04bf8a50bf8'),
+    paper: {
+      _id: new ObjectId('6820869aeb29e04bf8a50bf5'),
+      name: 'paper1',
+      date: 2025-05-11T11:14:34.051Z,
+      center: [Object],
+      person: new ObjectId('68208699eb29e04bf8a50bf1'),
+      personData: [Object],
+      person_name: 'Rahul'
+    },
+    date: 2025-05-11T11:14:34.414Z,
+    score: 0,
+    grace: 0,
+    person: { name: 'Rahul' },
+    total_score: 0
+  },
+  {
+    _id: new ObjectId('6820869aeb29e04bf8a50bf9'),
+    paper: {
+      _id: new ObjectId('6820869aeb29e04bf8a50bf6'),
+      name: 'paper2',
+      date: 2025-05-11T11:14:34.051Z,
+      center: [Object],
+      person: new ObjectId('68208699eb29e04bf8a50bf1'),
+      personData: [Object],
+      person_name: 'Rahul'
+    },
+    date: 2025-05-11T11:14:34.414Z,
+    score: 0,
+    grace: 0,
+    person: { name: 'Rahul' },
+    total_score: 0
+  },
+  {
+    _id: new ObjectId('6820869aeb29e04bf8a50bfa'),
+    paper: {
+      _id: new ObjectId('6820869aeb29e04bf8a50bf7'),
+      name: 'paper3',
+      date: 2025-05-11T11:14:34.051Z,
+      center: [Object],
+      person: new ObjectId('68208699eb29e04bf8a50bf1'),
+      personData: [Object],
+      person_name: 'Rahul'
+    },
+    date: 2025-05-11T11:14:34.414Z,
+    score: 0,
+    grace: 0,
+    person: { name: 'Rahul' },
+    total_score: 0
+  }
+]
+aggr Scr2 []
+delete Stat { acknowledged: true, deletedCount: 0 }
+BulkWriteResult {
+  insertedCount: 1,
+  matchedCount: 1,
+  modifiedCount: 1,
+  deletedCount: 1,
+  upsertedCount: 0,
+  upsertedIds: {},
+  insertedIds: { '0': new ObjectId('6820869beb29e04bf8a50bfb') }
+}
+{
+  _id: new ObjectId('6820869beb29e04bf8a50bfb'),
+  paper: new ObjectId('6820869aeb29e04bf8a50bf5'),
+  score: 68
+}
+sum [
+  {
+    _id: {
+      person: new ObjectId('68208699eb29e04bf8a50bf1'),
+      paper: 'paper3'
+    },
+    total: 97,
+    max: 97,
+    min: 97,
+    paperCount: 1,
+    averageScore: 97,
+    names: [ 'paper3' ],
+    size: 1
+  },
+  {
+    _id: {
+      person: new ObjectId('68208699eb29e04bf8a50bf1'),
+      paper: 'paper1'
+    },
+    total: 19,
+    max: 19,
+    min: 19,
+    paperCount: 2,
+    averageScore: 19,
+    names: [ 'paper1', 'paper1' ],
+    size: 2
+  },
+  {
+    _id: {
+      person: new ObjectId('68208699eb29e04bf8a50bf1'),
+      paper: 'paper2'
+    },
+    total: 18,
+    max: 18,
+    min: 18,
+    paperCount: 1,
+    averageScore: 18,
+    names: [ 'paper2' ],
+    size: 1
+  }
+]
